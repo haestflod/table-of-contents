@@ -1,5 +1,4 @@
 var f;
-console.log(f);
 (function(){var g=function(){function e(a,c){void 0===a&&(a="toc");void 0===c&&(c="contents");this.a=0;this.b=[];var b=document.getElementById(a),d=document.getElementById(c);b&&d&&this.c(b,d.querySelectorAll("h1, h2, h3, h4, h5, h6"))}e.prototype.c=function(a,c){for(var b=c.length,d=document.createDocumentFragment(),e=0;e<b;++e)this.f(c[e],d,a.id);a.innerHTML="Table of Content:";a.appendChild(d);a.className=""};e.prototype.f=function(a,c,b){this.g(parseInt(a.nodeName[1],10),c);c=this.b[this.a];var d=
 document.createElement("a");d.href="#"+b;b=a.cloneNode(!0);d.appendChild(b);a.parentNode.replaceChild(d,a);a=a.innerHTML.trim();b.id=a;b.innerHTML=a;b=document.createElement("li");b.innerHTML="<a href='#"+a+"'>"+a+"</a>";c.appendChild(b)};e.prototype.g=function(a,c){if(this.a<a)for(;this.a<a;)this.a++,this.b[this.a]=document.createElement("ul"),1==this.a?c.appendChild(this.b[1]):this.b[this.a-1].appendChild(this.b[this.a]);else if(this.a>a)for(;this.a>a;)this.b[this.a]=void 0,this.a--};return e}(),
 h=!1;document.addEventListener("DOMContentLoaded",function(){new g;h=!0});window.addEventListener("load",function(){h||new g})})(f||(f={}));
