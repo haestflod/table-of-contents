@@ -1,7 +1,6 @@
 "use strict";
 var HF;
 (function (HF) {
-    // Because of google closure compiler.    
     var ToC = (function () {
         function ToC(a_tocId, a_contentId) {
             if (a_tocId === void 0) { a_tocId = "toc"; }
@@ -31,6 +30,12 @@ var HF;
             a_tocElement.className = "";
         };
         ToC.prototype.createToCElement = function (a_headerElement, a_documentFragment, a_tocId) {
+            /// <summary>
+            /// Generates the anchor tag link to the headerElement input and then adds it to the documentFragment.
+            /// </summary>
+            /// <param name="a_headerElement" type="HTMLHeadingElement"></param>
+            /// <param name="a_documentFragment" type="DocumentFragment"></param>
+            /// <param name="a_tocId" type="string"></param>
             var headingLevel = parseInt(a_headerElement.nodeName[1], 10);
             this.gotoLevel(headingLevel, a_documentFragment);
             var currentListElement = this.m_currentLists[this.m_level];
@@ -39,6 +44,7 @@ var HF;
             var headerCloneElement = a_headerElement.cloneNode(true);
             toTopLink.appendChild(headerCloneElement);
             a_headerElement.parentNode.replaceChild(toTopLink, a_headerElement);
+            // Because id's can become "      id    "  which would become ____id____
             var id = a_headerElement.innerHTML.trim();
             headerCloneElement.id = id;
             headerCloneElement.innerHTML = id;

@@ -1,7 +1,6 @@
 ﻿"use strict";
 module HF
-{
-    // Because of google closure compiler.    
+{    
     class ToC
     {
         public m_level: number = 0;
@@ -41,6 +40,12 @@ module HF
 
         public createToCElement(a_headerElement: HTMLHeadingElement, a_documentFragment: DocumentFragment, a_tocId: string): void
         {
+            /// <summary>
+            /// Generates the anchor tag link to the headerElement input and then adds it to the documentFragment.
+            /// </summary>
+            /// <param name="a_headerElement" type="HTMLHeadingElement"></param>
+            /// <param name="a_documentFragment" type="DocumentFragment"></param>
+            /// <param name="a_tocId" type="string"></param>
             var headingLevel: number = parseInt(a_headerElement.nodeName[1], 10);
             
             this.gotoLevel(headingLevel, a_documentFragment);            
@@ -55,7 +60,7 @@ module HF
             toTopLink.appendChild(headerCloneElement);
 
             a_headerElement.parentNode.replaceChild(toTopLink, a_headerElement);
-
+            // Because id's can become "      id    "  which would become ____id____
             var id = a_headerElement.innerHTML.trim();
             headerCloneElement.id = id;
             headerCloneElement.innerHTML = id;
