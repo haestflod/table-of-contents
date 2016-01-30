@@ -1,0 +1,9 @@
+*.suo
+*.sln
+*.user
+*.csproj
+*.config
+*.cache
+/ToCApp/obj/*
+/ToCApp/bin/*
+/ToCApp/.vs/*
