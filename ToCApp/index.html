@@ -1,49 +1,57 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en">
+<!-- index.html is for testing -->
 <head>
     <meta charset="utf-8" />
-    <title>TypeScript HTML App</title>
-    <link rel="stylesheet" href="app.css" type="text/css" />
-    <script src="build.js"></script>
+    <title>ToC test file</title>    
+    
+    <script type="text/javascript">
+        // Copy blogger variable to test for that.
+        var f = "xml?v=1";
+    </script>
+    <!--<script src="app.js"></script>-->
+    <!-- The google closure compiled file -->
+    <script src="toc.closure.js"></script>
 
     <style>
         h1
         {
-            margin-bottom: 300px;
+            margin-bottom: 50px;
         }
 
         h2
         {
-            margin-bottom: 200px;
+            margin-bottom: 25px;
         }
 
         h3
         {
-            margin-bottom: 100px;
+            margin-bottom: 10px;
         }
     </style>
-
 </head>
-<body>
-    <h1>TypeScript HTML App</h1>
+<body>    
+    <h1 style="margin-bottom:0;">TypeScript HTML App</h1>
     <div id="toc">
         Table of contents
     </div>
     <div id="contents">
-        <h1>test</h1>
-        <h2>deeper</h2>
-        <h3>deepest</h3>
-        <h1>second test</h1>
-        <h1>third test</h1>
-        <h2>third deep</h2>
-        <h3>third deepest 1</h3>
-        <h3>third deepst 2</h3>
-        <h2>third deep 2</h2>
-        <h3>third deepest 3</h3>
-        <h1>fourth test</h1>
-        <h3>h3 straight away</h3>
-        <h1>h1 after</h1>
+        <h1>1</h1>
+        <h2>1.1</h2>
+        <h3>1.3</h3>
+        <h1>2.1</h1>
+        <h1>3.1</h1>
+        <h2>3.2.1</h2>
+        <h3>3.3.1</h3>
+        <h3>3.3.2</h3>
+        <h2>3.2.2</h2>
+        <h3>3.3.3</h3>
+        <!-- This is where the levels goes crazy in order!! -->
+        <h1>4.1</h1>
+        <h3>4.3</h3>
+        <h2>4.2</h2>
+        <h4>4.4</h4>
+        <h1>5.1</h1>
     </div>
 </body>
 </html>
