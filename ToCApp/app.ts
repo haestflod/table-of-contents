@@ -55,15 +55,12 @@ module HF
             var toTopLink: HTMLAnchorElement = document.createElement("a") as HTMLAnchorElement;
             toTopLink.href = "#" + a_tocId;
 
-            var headerCloneElement: HTMLHeadingElement = a_headerElement.cloneNode(true) as HTMLHeadingElement;
+            const id = a_headerElement.innerHTML.trim();
+            a_headerElement.id = id;
+            a_headerElement.innerHTML = "";
+            toTopLink.innerHTML = id;
 
-            toTopLink.appendChild(headerCloneElement);
-
-            a_headerElement.parentNode.replaceChild(toTopLink, a_headerElement);
-            // Because id's can become "      id    "  which would become ____id____
-            var id = a_headerElement.innerHTML.trim();
-            headerCloneElement.id = id;
-            headerCloneElement.innerHTML = id;
+            a_headerElement.appendChild(toTopLink);
 
             var listItem = document.createElement("li");
             listItem.innerHTML = "<a href='#" + id + "'>" + id + "</a>";

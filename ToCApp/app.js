@@ -41,13 +41,11 @@ var HF;
             var currentListElement = this.m_currentLists[this.m_level];
             var toTopLink = document.createElement("a");
             toTopLink.href = "#" + a_tocId;
-            var headerCloneElement = a_headerElement.cloneNode(true);
-            toTopLink.appendChild(headerCloneElement);
-            a_headerElement.parentNode.replaceChild(toTopLink, a_headerElement);
-            // Because id's can become "      id    "  which would become ____id____
             var id = a_headerElement.innerHTML.trim();
-            headerCloneElement.id = id;
-            headerCloneElement.innerHTML = id;
+            a_headerElement.id = id;
+            a_headerElement.innerHTML = "";
+            toTopLink.innerHTML = id;
+            a_headerElement.appendChild(toTopLink);
             var listItem = document.createElement("li");
             listItem.innerHTML = "<a href='#" + id + "'>" + id + "</a>";
             currentListElement.appendChild(listItem);
@@ -79,7 +77,7 @@ var HF;
             }
         };
         return ToC;
-    })();
+    }());
     // Put the load code last just incase!
     var loaded = false;
     document.addEventListener("DOMContentLoaded", function () {
@@ -93,4 +91,3 @@ var HF;
         }
     });
 })(HF || (HF = {}));
-//# sourceMappingURL=app.js.map
