@@ -24,7 +24,7 @@ var HF;
             }
             // Set the toc element title. 
             // First I only appended the documentFragment but then in blogger the preview texts it said "Table of Contents:"  and no table!
-            a_tocElement.innerHTML = "Table of Content:";
+            a_tocElement.innerHTML = "Table of Contents:";
             a_tocElement.appendChild(documentFragmentElement);
             // Remove the hide class
             a_tocElement.className = "";
